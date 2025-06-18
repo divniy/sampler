@@ -18,10 +18,21 @@ services:
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
     depends_on:
+    - apt-cacher-ng
     - selenium
+
+  apt-cacher-ng:
+    image: sameersbn/apt-cacher-ng
+    # container_name: apt-cacher-ng
+    ports:
+      - "3142:3142"
+    volumes:
+      - apt-cacher-ng:/var/cache/apt-cacher-ng
+    restart: unless-stopped
 
   selenium:
     image: selenium/standalone-chromium
     restart: unless-stopped
 
-  
+volumes:
+  apt-cacher-ng:  

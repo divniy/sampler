@@ -13,7 +13,7 @@
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
     "ghcr.io/rails/devcontainer/features/sqlite3": {},
     "ghcr.io/rails/devcontainer/features/bundler-cache:1": {},
-    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": { "plugins": "git bundler rails" },
+    //"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": { "plugins": "git bundler rails" },
     "ghcr.io/devcontainers/features/node:1": {}
   },
 
