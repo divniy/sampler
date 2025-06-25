@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :session, only: [:new, :create, :destroy]
+  resource :session, only: [ :new, :create, :destroy ]
   resources :passwords, param: :token
   root "welcome#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
