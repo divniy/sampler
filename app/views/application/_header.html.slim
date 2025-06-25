@@ -1,0 +1,4 @@
+- if authenticated?
+    = button_to("Logout", session_path, method: :delete)
+- else
+    p = link_to_unless_current("Login", new_session_path, class: "button")
