@@ -8,4 +8,4 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.find_or_initialize_by(email_address: 'divniy@gmail.com').update!(password: "qwerty")
+User.find_or_initialize_by(email_address: 'divniy@gmail.com').update!(password: Rails.application.credentials.divniy_password)
