@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resource :session, only: [ :new, :create, :destroy ]
   resources :passwords, param: :token
   root "welcome#index"
