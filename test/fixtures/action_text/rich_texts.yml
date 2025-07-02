@@ -1,0 +1,9 @@
+one_text:
+  record: one (Post)
+  name: body
+  body: <p>In a <i>One million</i> stars!</p>
+
+two_text:
+  record: two (Post)
+  name: body
+  body: <p>In a <i>Two million</i> stars!</p>
