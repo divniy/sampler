@@ -11,6 +11,6 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "build:css": "postcss ./app/assets/stylesheets/active_admin.postcss.css -o ./app/assets/builds/active_admin.css"
+    "build:css": "postcss ./app/assets/stylesheets/active_admin.postcss.css -o ./app/assets/builds/active_admin.css --config ./config"
   }
 }
