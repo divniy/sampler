@@ -1,3 +1,13 @@
+ActiveAdmin.importmap.draw do
+  pin "@hotwired/turbo-rails", to: "turbo.min.js"
+  pin "@hotwired/stimulus", to: "stimulus.min.js"
+  pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
+  pin_all_from "app/javascript/controllers", under: "controllers"
+
+  pin "trix"
+  pin "@rails/actiontext", to: "actiontext.esm.js"
+end
+
 ActiveAdmin.setup do |config|
   # == Site Title
   #
@@ -7,7 +17,6 @@ ActiveAdmin.setup do |config|
   # to use your own logo, styles, etc.
   #
   config.site_title = "Sampler"
-
   # == Load Paths
   #
   # By default Active Admin files go inside app/admin/.
@@ -61,7 +70,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  # config.authentication_method = :authenticate_admin_user!
+  config.authentication_method = :require_authentication
 
   # == User Authorization
   #
@@ -100,7 +109,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
-  # config.current_user_method = :current_admin_user
+  config.current_user_method = :current_user
 
   # == Logging Out
   #
@@ -112,7 +121,7 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  config.logout_link_path = :destroy_admin_user_session_path
+  config.logout_link_path = :session_path
 
   # == Root
   #

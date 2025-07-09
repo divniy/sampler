@@ -3,9 +3,14 @@
   "private": "true",
   "dependencies": {
     "@activeadmin/activeadmin": "4.0.0-beta15",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "postcss-nesting": "^13.0.2",
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/active_admin.tailwind.css -o ./app/assets/builds/active_admin.css --minify -c config/tailwind-active_admin.config.js"
+    "build:css": "postcss ./app/assets/stylesheets/active_admin.postcss.css -o ./app/assets/builds/active_admin.css"
   }
 }

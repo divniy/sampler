@@ -1,6 +1,17 @@
 ActiveAdmin.register Post do
+  # belongs_to :user
   # Specify parameters which should be permitted for assignment
-  permit_params :title, :author_id
+  permit_params :title, :body
+  # permit_params do
+    # params = [:title, :body]
+    # params
+  # end
+  controller do
+    def create
+      @post = Post.create_with(author: current_user).new(permitted_params[:post])
+      create!
+    end
+  end
 
   # or consider:
   #
@@ -8,6 +19,14 @@ ActiveAdmin.register Post do
   #   permitted = [:title, :author_id]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
+  # end
+  # 
+
+  # controller do
+  #   before_action :set_author, only: :create
+  #   def set_author
+  #     resource = resource_class.create_with(author: Current.user)
+  #   end
   # end
 
   # For security, limit the actions that should be available
@@ -36,6 +55,7 @@ ActiveAdmin.register Post do
     attributes_table_for(resource) do
       row :id
       row :title
+      row (:body){ resource.body.to_s }
       row :author
       row :created_at
       row :updated_at
@@ -47,7 +67,9 @@ ActiveAdmin.register Post do
     f.semantic_errors(*f.object.errors.attribute_names)
     f.inputs do
       f.input :title
-      f.input :author
+      f.label :body
+      f.rich_text_area :body
+      # f.input :author
     end
     f.actions
   end
