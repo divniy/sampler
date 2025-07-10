@@ -1,2 +1,2 @@
-web: env RUBY_DEBUG_OPEN=true bin/rails server
+web: env RUBY_DEBUG_OPEN=true bundle exec rdbg -O -n -c -- bin/rails server
 css: yarn build:css --watch

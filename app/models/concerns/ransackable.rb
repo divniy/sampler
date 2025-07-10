@@ -13,7 +13,7 @@ module Ransackable
     # of searchable associations as an array of strings.
     #
     def ransackable_associations(auth_object = nil)
-      [] #%w[author]
+      [] # %w[author]
     end
 
     # `ransortable_attributes` by default returns the names

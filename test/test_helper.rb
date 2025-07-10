@@ -14,7 +14,7 @@ module ActiveSupport
     def login_as(user)
       session = user.sessions.create!
       Current.session = session
-      request_cookie_jar.signed[:session_id] = { value: session.id, httponly: true, same_site: :lax }
+      request_cookie_jar.signed[:session_id] = {value: session.id, httponly: true, same_site: :lax}
     end
 
     def logout

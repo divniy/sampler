@@ -3,8 +3,8 @@ ActiveAdmin.register Post do
   # Specify parameters which should be permitted for assignment
   permit_params :title, :body
   # permit_params do
-    # params = [:title, :body]
-    # params
+  # params = [:title, :body]
+  # params
   # end
   controller do
     def create
@@ -20,7 +20,7 @@ ActiveAdmin.register Post do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  # 
+  #
 
   # controller do
   #   before_action :set_author, only: :create
@@ -55,7 +55,7 @@ ActiveAdmin.register Post do
     attributes_table_for(resource) do
       row :id
       row :title
-      row (:body){ resource.body.to_s }
+      row(:body) { resource.body.to_s }
       row :author
       row :created_at
       row :updated_at
