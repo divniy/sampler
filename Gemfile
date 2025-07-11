@@ -72,3 +72,7 @@ gem "cssbundling-rails", "~> 1.4"
 gem "activeadmin", "4.0.0.beta15"
 
 gem "pundit", "~> 2.5"
+
+gem "responders", "~> 3.1"
+
+gem "simple_form", "~> 5.3"
