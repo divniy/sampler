@@ -69,7 +69,7 @@ gem "slim-rails", "~> 3.7"
 
 gem "cssbundling-rails", "~> 1.4"
 
-gem "activeadmin", "4.0.0.beta15"
+gem "activeadmin", "4.0.0.beta16"
 
 gem "pundit", "~> 2.5"
 
